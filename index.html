@@ -5,9 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donut Clicker</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/layout.css">
   </head>
+  <header>
+    <nav class = "nav__bar">
+      <ul class = "nav__list">
+        <li class = "nav__item"><a href="#">Home</a></li>
+        <li class = "nav__item"><a href="#">Fred the Baker Baking Co.</a></li>
+        <li class = "nav__item"><a href="#">Inspiration</a></li>
+        <li class = "nav__item"><a href="#">Contact Info</a></li>
+      </ul>
+    </nav>
+  </header>
   <body>
     <div class="container"></div>
-    <script src="./index.js"></script>
+
+    <section class="donut__click">
+      <button class= "donut__button" type="button" name="donutButton">Make Donut</button>
+      <h2 class="donut__count">Donuts: </h2>
+    </section>
+
+    <section class="auto__clicker">
+      <button class= "auto__button" type="button" name="autoButton">Buy Auto-Clicker</button>
+      <h2 class="auto__count">Auto-Clickers: </h2>
+      <p class="auto__cost">Auto-Clicker Cost: </p>
+    </section>
+
+    <section class="click__multiplier">
+    </section>
+
+    <script src="./js/DonutMaker-App.js" type="module"></script>
   </body>
 </html>
