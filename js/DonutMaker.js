@@ -8,8 +8,8 @@ export default class DonutMaker {
         this.multis = 0;
         this.autoCost = 10;
         this.autoBuyEnabled = false;
-        // this.multiCost = 50;
-        // this.multiBuyEnabled = false;
+        this.multiCost = 10;
+        this.multiBuyEnabled = false;
     }
 
     
