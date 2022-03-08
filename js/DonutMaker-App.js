@@ -15,98 +15,44 @@ const multiCostEl = document.querySelector(".multi__cost");
 
 const donutMaker = new DonutMaker("Tasty Pastry");
 
-//view
+// view
 function updateView() {
   autoButton.disabled = !donutMaker.autoBuyEnabled;
   multiButton.disabled = !donutMaker.multiBuyEnabled;
   donutCountEl.innerText = "Donuts: " + donutMaker.count;
   autoCountEl.innerText = "Auto-Clickers: " + donutMaker.autos;
-  autoCostEl.innerText = "Auto-Clicker Cost: " + Math.floor(donutMaker.autoCost);
+  autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoCost;
   multiCountEl.innerText = "Multipliers: " + donutMaker.multis;
   multiCostEl.innerText = "Multiplier Cost: " + donutMaker.multiCost;
 }
 
 updateView();
 
-// make a donut
+//make a Donut
+function makeNewDonut() {
+  donutMaker.addDonut();
+}
+
 donutButton.addEventListener("click", () => {
-  addDonut();
+  makeNewDonut();
   updateView();
 })
 
-function addDonut() {
-
-  //multiplier bonus
-  if(donutMaker.multis === 0) {
-    donutMaker.count += 1;
-  } else {
-    donutMaker.count += Math.pow(1.2, donutMaker.multis);
-  }
-
-  //enable buy buttons
-  if(donutMaker.count >= 10) {
-    donutMaker.autoBuyEnabled = true;
-  }
-  if(donutMaker.count >= 10) {
-    donutMaker.multiBuyEnabled = true;
-  }
-
-}
-
-//auto-clicker stuff
+//auto-clicker button
 autoButton.addEventListener("click", () => {
-  buyAutoClicker();
-  clickAutomatically();
-  increaseAutoCost();
-  updateView();
-})
-
-function buyAutoClicker() {
-  if(donutMaker.count >= 10) {
-      donutMaker.count -= 10;
-      donutMaker.autos += 1;
-  }
-  if(donutMaker.count < 10) {
-      donutMaker.autoBuyEnabled = false;
-  }
-}
-
-function increaseAutoCost() {
-  if(donutMaker.autos === 0) {
-    donutMaker.autoCost = 10;
-  } else if (donutMaker.autos >= 1) {
-    donutMaker.autoCost += donutMaker.autoCost * .1;
-  }
-}
-
-function clickAutomatically() {
-  setInterval(addDonut, 1000);
+  donutMaker.buyAutoClicker();
+  setInterval(makeNewDonut, 1000);
   setInterval(updateView, 1000);
-}
-
-//multiplier stuff
-multiButton.addEventListener("click", () => {
-  buyMultiplier();
-  increaseMultiCost();
+  donutMaker.increaseAutoCost();
   updateView();
 })
 
-function buyMultiplier() {
-  if(donutMaker.count >= 10) {
-    donutMaker.count -= 10;
-    donutMaker.multis += 1;
-  }
-  if(donutMaker.count < 10) {
-      donutMaker.multiBuyEnabled = false;
-  }
-}
+//multiplier button
+multiButton.addEventListener("click", () => {
+  donutMaker.buyMultiplier();
+  donutMaker.increaseMultiCost();
+  updateView();
+})
 
-function increaseMultiCost() {
-  if(donutMaker.multis === 0) {
-    donutMaker.multiCost = 10;
-  } else if (donutMaker.multis >= 1) {
-    donutMaker.multiCost += donutMaker.multiCost * .1;
-  }
-}
 
 

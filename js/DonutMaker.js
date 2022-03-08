@@ -1,5 +1,5 @@
 export default class DonutMaker {
-    
+
 
     constructor(name) {
         this.name = name;
@@ -12,6 +12,61 @@ export default class DonutMaker {
         this.multiBuyEnabled = false;
     }
 
-    
+    addDonut() {
+
+        //multiplier bonus
+        if (this.multis === 0) {
+            this.count += 1;
+        } else {
+            this.count += Math.pow(1.2, this.multis);
+        }
+
+        //enable buy buttons
+        if (this.count >= 10) {
+            this.autoBuyEnabled = true;
+        }
+        if (this.count >= 10) {
+            this.multiBuyEnabled = true;
+        }
+
+    }
+
+    buyAutoClicker() {
+        if (this.count >= 10) {
+            this.count -= 10;
+            this.autos += 1;
+        }
+        if (this.count < 10) {
+            this.autoBuyEnabled = false;
+            this.multiBuyEnabled = false;
+        }
+    }
+
+    increaseAutoCost() {
+        if (this.autos === 0) {
+            this.autoCost = 10;
+        } else if (this.autos >= 1) {
+            this.autoCost += this.autoCost * .1;
+        }
+    }
+
+    buyMultiplier() {
+        if (this.count >= 10) {
+            this.count -= 10;
+            this.multis += 1;
+        }
+        if (this.count < 10) {
+            this.multiBuyEnabled = false;
+            this.autoBuyEnabled = false;
+        }
+    }
+
+    increaseMultiCost() {
+        if (this.multis === 0) {
+            this.multiCost = 10;
+        } else if (this.multis >= 1) {
+            this.multiCost += this.multiCost * .1;
+        }
+    }
 
 }
