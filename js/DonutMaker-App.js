@@ -15,16 +15,16 @@ const multiCostEl = document.querySelector(".multi__cost");
 
 const donutMaker = new DonutMaker("Tasty Pastry");
 
-// view
+// view and rounding numbers
 function updateView() {
   autoButton.disabled = !donutMaker.autoBuyEnabled;
   multiButton.disabled = !donutMaker.multiBuyEnabled;
-  donutButton.innerText = "Make " + Math.pow(1.2, donutMaker.multis) + " Donuts!";
-  donutCountEl.innerText = "Donuts: " + donutMaker.count;
+  donutButton.innerText = "Make " + Math.pow(1.2, donutMaker.multis).toFixed(1) + " Donuts!";
+  donutCountEl.innerText = "Donuts: " + donutMaker.count.toFixed(0);
   autoCountEl.innerText = "Auto-Clickers: " + donutMaker.autos;
-  autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoCost;
+  autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoCost.toFixed(1);
   multiCountEl.innerText = "Multipliers: " + donutMaker.multis;
-  multiCostEl.innerText = "Multiplier Cost: " + donutMaker.multiCost;
+  multiCostEl.innerText = "Multiplier Cost: " + donutMaker.multiCost.toFixed(1);
 }
 
 updateView();
@@ -57,7 +57,6 @@ multiButton.addEventListener("click", () => {
 
 //dropdown nav
 const dropdownBtnEl = document.querySelector(".dropbtn");
-const windowEl = document.getElementById
 
 
 dropdownBtnEl.addEventListener("click", () => {
