@@ -61,17 +61,20 @@ multiButton.addEventListener("click", () => {
 
 //reset button
 resetButton.addEventListener("click", () => {
-  donutMaker.resetGame();
-  clearInterval();
-  updateView();
+  location.reload();
 })
 
 //dropdown nav
 const dropdownBtnEl = document.querySelector(".dropbtn");
+const dropdownBtnEl2 = document.querySelector(".dropbtn2")
 
 
 dropdownBtnEl.addEventListener("click", () => {
   document.getElementById("myDropdown").classList.toggle("show");
+})
+
+dropdownBtnEl2.addEventListener("click", () => {
+  document.getElementById("myDropdown2").classList.toggle("show");
 })
 
 window.onclick = function(event) {
@@ -85,4 +88,15 @@ window.onclick = function(event) {
       }
     }
   }
+  if (!event.target.matches('.dropbtn2')) {
+    var dropdowns2 = document.getElementsByClassName("dropdown-content2");
+    var j;
+    for (j = 0; j < dropdowns2.length; j++) {
+      var openDropdown2 = dropdowns2[j];
+      if (openDropdown2.classList.contains('show')) {
+        openDropdown2.classList.remove('show');
+      }
+    }
+  }
 }
+
