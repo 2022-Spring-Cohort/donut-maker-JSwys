@@ -9,14 +9,16 @@
     <link rel="stylesheet" href="./css/layout.css">
   </head>
   <header>
-    <nav class = "nav__bar">
-      <ul class = "nav__list">
-        <li class = "nav__item"><a href="#">Home</a></li>
-        <li class = "nav__item"><a href="#">Fred the Baker Baking Co.</a></li>
-        <li class = "nav__item"><a href="#">Inspiration</a></li>
-        <li class = "nav__item"><a href="#">Contact Info</a></li>
-      </ul>
-    </nav>
+    <div class = "navbar">
+      <a href="/">Home</a>
+      <div class="dropdown">
+        <a class = dropbtn>Fred the Baker Baking Co.</a>
+        <div id="myDropdown" class="dropdown-content">
+          <p>Some stuff about Fred and his baking company. YADA YADA YADA</p>
+        </div>
+      <a href="https://orteil.dashnet.org/cookieclicker/">Inspiration</a>
+      <a href="#">Contact Info</a>
+    </div>
   </header>
   <body>
     <div class="container"></div>

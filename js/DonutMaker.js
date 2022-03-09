@@ -6,7 +6,7 @@ export default class DonutMaker {
         this.count = 0;
         this.autos = 0;
         this.multis = 0;
-        this.autoCost = 10;
+        this.autoCost = 100;
         this.autoBuyEnabled = false;
         this.multiCost = 10;
         this.multiBuyEnabled = false;
@@ -22,7 +22,7 @@ export default class DonutMaker {
         }
 
         //enable buy buttons
-        if (this.count >= 10) {
+        if (this.count >= 100) {
             this.autoBuyEnabled = true;
         }
         if (this.count >= 10) {
@@ -32,13 +32,15 @@ export default class DonutMaker {
     }
 
     buyAutoClicker() {
-        if (this.count >= 10) {
-            this.count -= 10;
+        if (this.count >= 100) {
+            this.count -= 100;
             this.autos += 1;
         }
         if (this.count < 10) {
-            this.autoBuyEnabled = false;
             this.multiBuyEnabled = false;
+        }
+        if (this.count < 100) {
+            this.autoBuyEnabled = false;
         }
     }
 
@@ -57,6 +59,8 @@ export default class DonutMaker {
         }
         if (this.count < 10) {
             this.multiBuyEnabled = false;
+        }
+        if (this.count < 100) {
             this.autoBuyEnabled = false;
         }
     }

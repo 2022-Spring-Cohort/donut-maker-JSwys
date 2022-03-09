@@ -19,6 +19,7 @@ const donutMaker = new DonutMaker("Tasty Pastry");
 function updateView() {
   autoButton.disabled = !donutMaker.autoBuyEnabled;
   multiButton.disabled = !donutMaker.multiBuyEnabled;
+  donutButton.innerText = "Make " + Math.pow(1.2, donutMaker.multis) + " Donuts!";
   donutCountEl.innerText = "Donuts: " + donutMaker.count;
   autoCountEl.innerText = "Auto-Clickers: " + donutMaker.autos;
   autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoCost;
@@ -54,5 +55,11 @@ multiButton.addEventListener("click", () => {
   updateView();
 })
 
+//dropdown nav
+const dropdownBtnEl = document.querySelector(".dropbtn");
 
+
+dropdownBtnEl.addEventListener("click", () => {
+  document.getElementById("myDropdown").classList.toggle("show");
+})
 
