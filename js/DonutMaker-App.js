@@ -12,6 +12,9 @@ const multiButton = document.querySelector(".multi__button");
 const multiCountEl = document.querySelector(".multi__count");
 const multiCostEl = document.querySelector(".multi__cost");
 
+const resetButton = document.querySelector(".reset__button")
+
+
 
 const donutMaker = new DonutMaker("Tasty Pastry");
 
@@ -32,6 +35,7 @@ updateView();
 //make a Donut
 function makeNewDonut() {
   donutMaker.addDonut();
+  spawnSpinningDonut();
 }
 
 donutButton.addEventListener("click", () => {
@@ -52,6 +56,13 @@ autoButton.addEventListener("click", () => {
 multiButton.addEventListener("click", () => {
   donutMaker.buyMultiplier();
   donutMaker.increaseMultiCost();
+  updateView();
+})
+
+//reset button
+resetButton.addEventListener("click", () => {
+  donutMaker.resetGame();
+  clearInterval();
   updateView();
 })
 

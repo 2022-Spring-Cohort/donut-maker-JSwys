@@ -73,4 +73,15 @@ export default class DonutMaker {
         }
     }
 
+    resetGame() {
+        this.count = 0;
+        this.autos = 0;
+        this.multis = 0;
+        this.autoCost = 100;
+        this.autoBuyEnabled = false;
+        this.multiCost = 10;
+        this.multiBuyEnabled = false;
+    }
+
+
 }

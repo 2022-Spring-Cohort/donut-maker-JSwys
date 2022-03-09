@@ -33,26 +33,33 @@
 </header>
 
 <body>
-  <div class="container"></div>
+  <div class="container">
+    <canvas id="canvas" width="100" height="100"></canvas>
+    <section class="donut__click">
+      <button class="donut__button" type="button" name="donutButton">Make Donut</button>
+      <h2 class="donut__count">Donuts: </h2>
+    </section>
 
-  <section class="donut__click">
-    <button class="donut__button" type="button" name="donutButton">Make Donut</button>
-    <h2 class="donut__count">Donuts: </h2>
-  </section>
+    <section class="auto__clicker">
+      <button class="auto__button" type="button" name="autoButton">Buy Auto-Clicker</button>
+      <h2 class="auto__count">Auto-Clickers: </h2>
+      <p class="auto__cost">Auto-Clicker Cost: </p>
+    </section>
 
-  <section class="auto__clicker">
-    <button class="auto__button" type="button" name="autoButton">Buy Auto-Clicker</button>
-    <h2 class="auto__count">Auto-Clickers: </h2>
-    <p class="auto__cost">Auto-Clicker Cost: </p>
-  </section>
+    <section class="click__multiplier">
+      <button class="multi__button" type="button" name="multiButton">Buy Multiplier</button>
+      <h2 class="multi__count">Multipliers: </h2>
+      <p class="multi__cost">Multiplier Cost: </p>
+    </section>
 
-  <section class="click__multiplier">
-    <button class="multi__button" type="button" name="multiButton">Buy Multiplier</button>
-    <h2 class="multi__count">Multipliers: </h2>
-    <p class="multi__cost">Multiplier Cost: </p>
-  </section>
+    <section class="reset">
+      <button class="reset__button" type="button" name="resetButton">Reset Game</button>
+    </section>
 
-  <script src="./js/DonutMaker-App.js" type="module"></script>
+    <script src="./js/Particles.js"></script>
+    <script src="./js/DonutMaker-App.js" type="module"></script>
+    
+  </div>
 </body>
 
 </html>
