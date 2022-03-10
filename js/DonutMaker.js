@@ -1,14 +1,13 @@
 export default class DonutMaker {
 
 
-    constructor(name) {
-        this.name = name;
+    constructor() {
         this.count = 0;
         this.autos = 0;
         this.multis = 0;
         this.autoCost = 100;
-        this.autoBuyEnabled = false;
         this.multiCost = 10;
+        this.autoBuyEnabled = false;
         this.multiBuyEnabled = false;
     }
 
@@ -22,55 +21,50 @@ export default class DonutMaker {
         }
 
         //enable buy buttons
-        if (this.count >= 100) {
+        if (this.count >= this.autoCost) {
             this.autoBuyEnabled = true;
         }
-        if (this.count >= 10) {
+        if (this.count >= this.multiCost) {
             this.multiBuyEnabled = true;
         }
 
+        console.log(this.count);
+        console.log(this.multiCost);
+        console.log(this.autoCost);
     }
 
     buyAutoClicker() {
-        if (this.count >= 100) {
-            this.count -= 100;
-            this.autos += 1;
-        }
-        if (this.count < 10) {
+        this.count -= this.autoCost;
+        this.autos += 1;
+        this.autoCost += this.autoCost * .1;
+
+        if (this.count < this.multiCost) {
             this.multiBuyEnabled = false;
         }
-        if (this.count < 100) {
+        if (this.count < this.autoCost) {
             this.autoBuyEnabled = false;
         }
-    }
 
-    increaseAutoCost() {
-        if (this.autos === 0) {
-            this.autoCost = 10;
-        } else if (this.autos >= 1) {
-            this.autoCost += this.autoCost * .1;
-        }
+        console.log(this.count);
+        console.log(this.multiCost);
+        console.log(this.autoCost);
     }
 
     buyMultiplier() {
-        if (this.count >= 10) {
-            this.count -= 10;
-            this.multis += 1;
-        }
+        this.count -= this.multiCost;
+        this.multis += 1;
+        this.multiCost += this.multiCost * .1;
+        
         if (this.count < 10) {
             this.multiBuyEnabled = false;
         }
         if (this.count < 100) {
             this.autoBuyEnabled = false;
         }
-    }
 
-    increaseMultiCost() {
-        if (this.multis === 0) {
-            this.multiCost = 10;
-        } else if (this.multis >= 1) {
-            this.multiCost += this.multiCost * .1;
-        }
+        console.log(this.count);
+        console.log(this.multiCost);
+        console.log(this.autoCost);
     }
 
     resetGame() {
@@ -81,7 +75,10 @@ export default class DonutMaker {
         this.autoBuyEnabled = false;
         this.multiCost = 10;
         this.multiBuyEnabled = false;
-    }
 
+        console.log(this.count);
+        console.log(this.multiCost);
+        console.log(this.autoCost);
+    }
 
 }

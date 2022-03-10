@@ -17,14 +17,14 @@ const resetButton = document.querySelector(".reset__button")
 
 
 
-const donutMaker = new DonutMaker("Tasty Pastry");
+const donutMaker = new DonutMaker();
 
 // view and rounding numbers
 function updateView() {
   autoButton.disabled = !donutMaker.autoBuyEnabled;
   multiButton.disabled = !donutMaker.multiBuyEnabled;
   clickWorthEl.innerText = "x" + Math.pow(1.2, donutMaker.multis).toFixed(1) + " Donuts!";
-  donutCountEl.innerText = "Donuts: " + donutMaker.count.toFixed(0);
+  donutCountEl.innerText = "Donuts: " + donutMaker.count.toFixed(1);
   autoCountEl.innerText = "Auto-Clickers: " + donutMaker.autos;
   autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoCost.toFixed(1);
   multiCountEl.innerText = "Multipliers: " + donutMaker.multis;
@@ -49,14 +49,12 @@ autoButton.addEventListener("click", () => {
   donutMaker.buyAutoClicker();
   setInterval(makeNewDonut, 1000);
   setInterval(updateView, 1000);
-  donutMaker.increaseAutoCost();
   updateView();
 })
 
 //multiplier button
 multiButton.addEventListener("click", () => {
   donutMaker.buyMultiplier();
-  donutMaker.increaseMultiCost();
   updateView();
 })
 
