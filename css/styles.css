@@ -1,40 +1,74 @@
 
 
 .navbar {
-  margin-top: 30px;
   margin-bottom: 30px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(241, 161, 200);
 }
 
 .container {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-top: 250px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.auto__clicker {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.donut__click {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.click__multiplier {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.donut__button {
+  width: 340px;
+  max-height: 100%;
+  cursor: pointer;
 }
 
 
 /* Dropdown Button */
 
-.dropbtn, .dropbt2, .navbar a {
+.dropbtn, .dropbtn2, .otherLinks {
   background-color: grey;
   color: white;
   padding: 16px;
+  margin: 0px 10px;
   font-size: 16px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  border-radius: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 /* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbt2:hover, .dropbtn:focus, .dropbt2:focus {
+.dropbtn:hover, .dropbtn2:hover, .dropbtn:focus, .dropbtn2:focus {
   background-color: greenyellow;
+  color: black;
 }
 
-.navbar a:hover, .navbar a:focus {
+.otherLinks:hover, .otherLinks:focus {
   background-color: greenyellow;
+  color:black;
+
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -44,23 +78,12 @@
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
+.dropdown-content, .dropdown-content2{
   display: none;
   position: absolute;
   background-color: #f1f1f1;
   margin-top: 16px;
   min-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content2 {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 200px;
-  margin-top: 16px;
   border-radius: 10px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -92,4 +115,17 @@
   left: 0px;
   z-index: 1;
   pointer-events: none;
+}
+
+.reset {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.body {
+  width: 100%;
+  margin:0px;
+  padding:0px;
+  overflow: hidden;
 }

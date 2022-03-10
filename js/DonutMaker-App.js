@@ -3,6 +3,7 @@ import DonutMaker from "./DonutMaker.js";
 
 const donutButton = document.querySelector(".donut__button");
 const donutCountEl = document.querySelector(".donut__count");
+const clickWorthEl = document.querySelector(".click__worth")
 
 const autoButton = document.querySelector(".auto__button");
 const autoCountEl = document.querySelector(".auto__count");
@@ -22,7 +23,7 @@ const donutMaker = new DonutMaker("Tasty Pastry");
 function updateView() {
   autoButton.disabled = !donutMaker.autoBuyEnabled;
   multiButton.disabled = !donutMaker.multiBuyEnabled;
-  donutButton.innerText = "Make " + Math.pow(1.2, donutMaker.multis).toFixed(1) + " Donuts!";
+  clickWorthEl.innerText = "x" + Math.pow(1.2, donutMaker.multis).toFixed(1) + " Donuts!";
   donutCountEl.innerText = "Donuts: " + donutMaker.count.toFixed(0);
   autoCountEl.innerText = "Auto-Clickers: " + donutMaker.autos;
   autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoCost.toFixed(1);
