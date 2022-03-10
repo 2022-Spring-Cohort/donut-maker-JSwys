@@ -18,7 +18,7 @@ class SpinningDonut {
         this.rotation = 0; //rotating around a circle
         this.opacity = 1; //0 completely transparent -> 1 completely visible
         this.size = Math.random() * 3;
-        this.image = "./images/donut.png"
+        this.image = "./images/donut.png";
     }
 
     update() {
