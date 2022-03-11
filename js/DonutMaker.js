@@ -55,10 +55,10 @@ export default class DonutMaker {
         this.multis += 1;
         this.multiCost += this.multiCost * .1;
         
-        if (this.count < 10) {
+        if (this.count < this.multiCost) {
             this.multiBuyEnabled = false;
         }
-        if (this.count < 100) {
+        if (this.count < this.autoCost) {
             this.autoBuyEnabled = false;
         }
 
