@@ -47,6 +47,7 @@ donutButton.addEventListener("click", () => {
 //auto-clicker button
 autoButton.addEventListener("click", () => {
   donutMaker.buyAutoClicker();
+  new Audio("./sounds/digitalBeep.mp3").play();
   setInterval(makeNewDonut, 1000);
   setInterval(updateView, 1000);
   updateView();
@@ -54,13 +55,30 @@ autoButton.addEventListener("click", () => {
 
 //multiplier button
 multiButton.addEventListener("click", () => {
+  new Audio("./sounds/digitalBeep.mp3").play();
   donutMaker.buyMultiplier();
   updateView();
 })
 
 //reset button
 resetButton.addEventListener("click", () => {
-  location.reload();
+  
+  for(let i=0; i<=donutMaker.autos*2; i++) {
+    window.clearInterval(i);
+  }
+  
+  donutMaker.count = 0;
+  donutMaker.autos = 0;
+  donutMaker.multis = 0;
+  donutMaker.autoCost = 100;
+  donutMaker.multiCost = 10;
+  donutMaker.autoBuyEnabled = false;
+  donutMaker.multiBuyEnabled = false;
+
+  updateView();
+
+  // location.reload();
+
 })
 
 //dropdown nav

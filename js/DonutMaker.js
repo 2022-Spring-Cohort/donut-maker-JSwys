@@ -28,9 +28,9 @@ export default class DonutMaker {
             this.multiBuyEnabled = true;
         }
 
-        console.log(this.count);
-        console.log(this.multiCost);
-        console.log(this.autoCost);
+        // console.log(this.count);
+        // console.log(this.multiCost);
+        // console.log(this.autoCost);
     }
 
     buyAutoClicker() {
@@ -45,9 +45,9 @@ export default class DonutMaker {
             this.autoBuyEnabled = false;
         }
 
-        console.log(this.count);
-        console.log(this.multiCost);
-        console.log(this.autoCost);
+        // console.log(this.count);
+        // console.log(this.multiCost);
+        // console.log(this.autoCost);
     }
 
     buyMultiplier() {
@@ -62,9 +62,9 @@ export default class DonutMaker {
             this.autoBuyEnabled = false;
         }
 
-        console.log(this.count);
-        console.log(this.multiCost);
-        console.log(this.autoCost);
+        // console.log(this.count);
+        // console.log(this.multiCost);
+        // console.log(this.autoCost);
     }
 
     resetGame() {
@@ -76,9 +76,9 @@ export default class DonutMaker {
         this.multiCost = 10;
         this.multiBuyEnabled = false;
 
-        console.log(this.count);
-        console.log(this.multiCost);
-        console.log(this.autoCost);
+        // console.log(this.count);
+        // console.log(this.multiCost);
+        // console.log(this.autoCost);
     }
 
 }
