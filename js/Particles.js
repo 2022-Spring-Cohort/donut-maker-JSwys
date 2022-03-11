@@ -44,7 +44,7 @@ class SpinningDonut {
 function spawnSpinningDonut() {
     if (particleArray.length <= maxSize) {
         particleArray.push(new SpinningDonut());
-        console.log(particleArray);
+        // console.log(particleArray);
     }
 }
 

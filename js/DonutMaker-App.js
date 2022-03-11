@@ -24,7 +24,7 @@ function updateView() {
   autoButton.disabled = !donutMaker.autoBuyEnabled;
   multiButton.disabled = !donutMaker.multiBuyEnabled;
   clickWorthEl.innerText = "x" + Math.pow(1.2, donutMaker.multis).toFixed(1) + " Donuts!";
-  donutCountEl.innerText = "Donuts: " + donutMaker.count.toFixed(1);
+  donutCountEl.innerText = donutMaker.count.toFixed(1);
   autoCountEl.innerText = "Auto-Clickers: " + donutMaker.autos;
   autoCostEl.innerText = "Auto-Clicker Cost: " + donutMaker.autoCost.toFixed(1);
   multiCountEl.innerText = "Multipliers: " + donutMaker.multis;

@@ -13,7 +13,7 @@
   margin-top: 5%;
   margin-bottom: 5%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 .auto__clicker {
@@ -21,6 +21,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 20%;
+  margin-right: 10%;
 }
 
 .donut__click {
@@ -35,6 +37,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 20%;
+  margin-left: 10%;
 }
 
 
@@ -42,6 +46,10 @@
   width: 340px;
   max-height: 100%;
   cursor: pointer;
+}
+
+.donut__count {
+  font-size: 3em;
 }
 
 .auto__button {
