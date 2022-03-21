@@ -1,13 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donut Clicker</title>
-  </head>
-  <body>
-    <div class="container"></div>
-    <script src="./index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donut Clicker</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="shortcut icon" href="./images/favicon.ico" >
+</head>
+
+
+
+<body class="body">
+  
+  <header>
+    <div class="navbar">
+      <a class="otherLinks" href="/">Home</a>
+      <div class="dropdown">
+        <a class=dropbtn>Fred the Baker Baking Co.</a>
+        <div id="myDropdown" class="dropdown-content">
+          <p>Fred Hatfield grew up poor, deep in the Appalachian Mountains. Originally a Moonshine maker, he spent his
+            young life producing and distributing hooch to nearby families. He was well known on the mountain, and he
+            was
+            feared. His product however, had devastating effects on his community. Blood fueds were rampant, with heavy
+            losses on all sides through generations, fueled by Fred's trade.
+          </p>
+          <p>Everything changed one fateful afternoon 1965. While distilling a new batch of his moonshine in a
+            thunderstorm, Fred was struck by lightning. This was the fifth time it had happened, but on this occurence
+            Fred had a revelation. He saw clearly the damage this trade was doing to his rural community. Fred vowed
+            from
+            that moment to never touch another drop of spirits and set about learning how to make donuts. Hence, Fred
+            the
+            Baker Baking Co. was born.</p>
+        </div>
+      </div>
+      <a class="otherLinks" href="https://orteil.dashnet.org/cookieclicker/" target="_blank"
+        rel="noopener noreferrer">Inspiration</a>
+      <div class="dropdown2">
+        <a class=dropbtn2>Contact Info</a>
+        <div id="myDropdown2" class="dropdown-content2">
+          <p>Joe Swysgood</p>
+          <p>notmyemail@donotsend.com</p>
+          <p><a class="portfolio" href="https://jswys.github.io/" target="_blank" rel="noopener noreferrer">Portfolio</a> </p>
+          <p><a class="github" href="https://github.com/JSwys" target="_blank" rel="noopener noreferrer">Github</a></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <canvas id="canvas" width="100" height="100"></canvas>
+
+  <div class="container">
+
+    <section class="auto__clicker">
+      <button class="auto__button" type="button" name="autoButton">Buy Auto-Clicker</button>
+      <h2 class="auto__count">Auto-Clickers: </h2>
+      <p class="auto__cost">Auto-Clicker Cost: </p>
+    </section>
+
+    <section class="donut__click">
+      <h3 class="click__worth">Donuts Per Click</h3>
+      <img src="./images/choco_donut.png" class="donut__button" name="donutButton"></img>
+      <h1 class="donut__count">Donuts: </h1>
+    </section>
+
+    <section class="click__multiplier">
+      <button class="multi__button" type="button" name="multiButton">Buy Multiplier</button>
+      <h2 class="multi__count">Multipliers: </h2>
+      <p class="multi__cost">Multiplier Cost: </p>
+    </section>
+
+  </div>
+
+  <section class="reset">
+    <button class="reset__button" type="button" name="resetButton">Reset Game</button>
+  </section>
+
+  <script src="./js/Particles.js"></script>
+  <script src="./js/DonutMaker-App.js" type="module"></script>
+
+</body>
+
 </html>
